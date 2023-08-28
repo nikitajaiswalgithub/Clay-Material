@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "murti1",
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.murtiRootWorkspaceName": "login page",
+		"liveServer.settings.port": 5503,
+		"liveServer.settings.multiRootWorkspaceName": "login page"
+	}
+}

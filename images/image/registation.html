@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet"href="/registation.css">
+</head>
+<body>  
+    <div class="container">
+            <div class="box">
+                <header>
+                    <div class="mid">
+                        <ul class="navbar">
+                            
+                            <li><a href="http://127.0.0.1:5501/index.html">Home</a></li>
+                            <li><a href="http://127.0.0.1:5501/login%20page/login.html">Login</a></li>
+                            <li><a href="http://127.0.0.1:5501/welcome.html">Welcome</a></li>
+                            <li><a href="http://127.0.0.1:5501/contect.html">contect</a></li>
+                            <li><a href="http://127.0.0.1:5501/registation.html"> costomer Address</a></li>
+                  
+                        </ul>
+                
+                    </div>
+                </header>
+           <div class="form">
+        <h1> Registation Form</h1>
+  <form name="submit-to-google-sheet">
+    <label>Name:</label>
+    <input type="text" id="fname" name="Name" placeholder="Enter full Name" required><br>
+    <label>Email:</label>
+    <input type="text" id="Email" name="Email" placeholder="Enter Your Email" required><br>
+    <label>Mobail:</label>
+    <input type="text" id="Mobail" name="Mobail" placeholder="Enter Mobail number" required><br>
+    <label for="datepicker"> enter date</label>
+    <input type="date" name="datepicker" name="Date" id="datepicker">
+    <label>Password</label>
+    <input type="text" id="Password" name="Password" placeholder="Enter Password" required><br>
+    <label>Confirm Password</label>
+    <input type="text"id="Confirm Passward" name="Confirm Passward" placeholder="Enter Confirm Password" required><br>
+
+    <center>
+        <input type="submit" value="Submit" id="Submit" name="submit">
+    </center>
+    </form>
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzN2ImxQlvaJCAS9Pa4Hd8D5SRw4V2rQ0ZCtG9xG_u0tWN-Y8FP6fa2I5fFrAJ5NMwB/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+
+        
+        </script>
+    </div>
+        </div>
+</body>
+</html>
+   
